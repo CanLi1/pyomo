@@ -854,6 +854,8 @@ class ProblemWriter_bar(AbstractProblemWriter):
         output_file.write('}\n\n')
 
         output_file.close()
-
-        return output_filename, symbol_map, referenced_variable_ids
+        if output_filename == "root_relaxation_baron":
+            return output_filename, symbol_map, referenced_variable_ids
+        else:
+            return output_filename, symbol_map
 
